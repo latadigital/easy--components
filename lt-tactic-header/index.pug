@@ -7,13 +7,13 @@ mixin tacticHeader(banner, items)
 			.lt-tactic-header__banner
 				img(src=banner.image, alt=banner.label)
 		nav.lt-tactic-header__nav
-			input#accordion(type="checkbox", name="accordion", style="display: none")
-			label.lt-tactic-header__accordion(for="accordion")
-				span Menú
-				span.burger
-					span 
-					span 
-					span 
+			//- input#accordion(type="checkbox", name="accordion", style="display: none")
+			//- label.lt-tactic-header__accordion(for="accordion")
+			//- 	span Menú
+			//- 	span.burger
+			//- 		span 
+			//- 		span 
+			//- 		span 
 			ul.lt-tactic-header__list
 				each item in items
 					li.lt-tactic-header__list__item

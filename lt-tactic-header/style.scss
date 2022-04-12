@@ -1,107 +1,124 @@
-$breakpoint: 768px;
+$breakpoint-md: 769px;
+$breakpoint-xs: 481px;
 
 .lt-tactic-header {
 	$t: &;
-	--font-family: "Roboto" sans-serif;
+	--font-family: "Roboto", sans-serif;
 	--background-color: #e5e5e5;
 	--background-color-hover: #aed7c5;
 	--color: #000;
 	--color-hover: #000;
 	margin-bottom: 40px;
 	&__banner {
-		display: block;
+		display: none;
 		margin-bottom: 20px;
+		@media screen and (min-width: $breakpoint-md) {
+			display: block;
+		}
 		img {
 			display: block;
 			width: 100%;
 		}
 	}
 	&__nav {
+		font-family: var(--font-family);
 		position: relative;
-		input:checked {
-			~ #{$t}__accordion {
-				background: var(--background-color-hover);
-				color: var(--color-hover);
-				.burger {
-					span {
-						&:nth-child(2) {
-							transform: scaleX(0);
-						}
-						&:nth-child(1) {
-							transform: translateY(8px) rotate(45deg);
-						}
-						&:nth-child(3) {
-							transform: translateY(-8px) rotate(-45deg);
-						}
-					}
-				}
-			}
-			~ #{$t}__list {
-				display: flex;
-				flex-direction: column;
-				@media screen and (min-width: $breakpoint) {
-					flex-direction: row;
-				}
-			}
-		}
+		// input:checked {
+		// 	~ #{$t}__accordion {
+		// 		background: var(--background-color-hover);
+		// 		color: var(--color-hover);
+		// 		.burger {
+		// 			span {
+		// 				&:nth-child(2) {
+		// 					transform: scaleX(0);
+		// 				}
+		// 				&:nth-child(1) {
+		// 					transform: translateY(8px) rotate(45deg);
+		// 				}
+		// 				&:nth-child(3) {
+		// 					transform: translateY(-8px) rotate(-45deg);
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// 	~ #{$t}__list {
+		// 		display: flex;
+		// 		flex-direction: column;
+		// 		@media screen and (min-width: $breakpoint-md) {
+		// 			flex-direction: row;
+		// 		}
+		// 	}
+		// }
 	}
-	&__accordion {
-		display: flex;
-		justify-content: space-between;
-		background: var(--background-color);
-		padding: 20px;
-		transition: all ease 200ms;
-		@media screen and (min-width: $breakpoint) {
-			display: none;
-		}
-		.burger {
-			width: 24px;
-			display: flex;
-			flex-direction: column;
-			gap: 4px;
-			span {
-				width: 100%;
-				height: 4px;
-				border-radius: 4px;
-				background: var(--color);
-				transition: all ease 200ms;
-			}
-		}
-	}
+	// &__accordion {
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// 	background: var(--background-color);
+	// 	padding: 20px;
+	// 	transition: all ease 200ms;
+	// 	@media screen and (min-width: $breakpoint-md) {
+	// 		display: none;
+	// 	}
+	// 	.burger {
+	// 		width: 24px;
+	// 		display: flex;
+	// 		flex-direction: column;
+	// 		gap: 4px;
+	// 		span {
+	// 			width: 100%;
+	// 			height: 4px;
+	// 			border-radius: 4px;
+	// 			background: var(--color);
+	// 			transition: all ease 200ms;
+	// 		}
+	// 	}
+	// }
 	&__list {
-		display: none;
 		list-style-type: none;
 		width: 100%;
-		@media screen and (min-width: $breakpoint) {
-			display: flex;
-			gap: 15px;
-		}
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: center;
+		gap: 15px;
 		&__item {
-			@media screen and (min-width: $breakpoint) {
+			// flex:1;
+			width: calc(100% / 3 - 15px);
+			@media screen and (min-width: $breakpoint-xs) {
+				width: calc(100% / 3 - 15px);
+			}
+			@media screen and (min-width: $breakpoint-md) {
 				flex: 1;
+				width: auto;
+				flex-wrap: none;
 			}
 		}
 		&__link {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			width: 100%;
 			padding: 10px 15px;
 			background: var(--background-color);
 			text-decoration: none;
 			color: var(--color);
-			font-size: 15px;
-			line-height: 20px;
+			font-size: 14px;
+			line-height: 17px;
 			transition: all ease 200ms;
 			overflow: hidden;
 			height: 100%;
-			@media screen and (min-width: $breakpoint) {
+			border-radius: 8px;
+			box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+			@media screen and (min-width: $breakpoint-md) {
+				flex-direction: row;
 				text-align: center;
 				justify-content: center;
-				border-radius: 8px;
-				box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+				font-size: 15px;
 			}
 			&--image {
-				text-align: right;
+				text-align: center;
+				@media screen and (min-width: $breakpoint-md) {
+					text-align: right;
+				}
 			}
 			&:hover {
 				background: var(--background-color-hover);
@@ -109,8 +126,10 @@ $breakpoint: 768px;
 			}
 			img {
 				max-width: 60px;
-				margin-right: 10px;
-				@media screen and (min-width: $breakpoint) {
+				margin-bottom: 10px;
+				@media screen and (min-width: $breakpoint-md) {
+					margin: 0;
+					margin-right: 10px;
 					max-width: 50%;
 				}
 			}
