@@ -1,0 +1,13 @@
+-
+	$hash = "#EasyTips"
+	$icon = "https://media.easy.cl/is/image/EasySA/IconTips"
+	$call = "Si pintarás con"
+	$product = "Esmalte al agua"
+	$tip = "Recuerda no pintar sobre papel mural con este tipo de pinturas ya que puedes generar globos en tu muralla y quedar con una mala terminación."
+
+.lt-tip
+	.lt-tip__item.lt-tip__item--head
+		.lt-tip__icon
+			img(src=$icon, alt=$hash)
+		.lt-tip__hash=$hash
+	.lt-tip__item.lt-tip__item--content!= `<strong>${$call} <span>${$product}</span></strong>: ${$tip}`

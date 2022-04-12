@@ -1,0 +1,80 @@
+$breakpoint: 768px;
+
+.lt-tip {
+	--font-family: "Roboto" sans-serif;
+	--background-color: #fff7ef;
+	--border-color: #f17a0a;
+	--product-color: #6dc0a2;
+	--hashtag-color: #e83662;
+	--body-color: #4d4d4d;
+
+	// Layout
+	display: flex;
+	align-items: center;
+	@media screen and (max-width: $breakpoint) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	// Colors
+	background-color: var(--background-color);
+	border: 1px dotted var(--border-color);
+
+	// Box
+	border-radius: 7px;
+	padding: 15px;
+	margin: 10px 0;
+	@media screen and (max-width: $breakpoint) {
+		padding: 20px;
+	}
+
+	// Typography
+	font-family: var(--font-family);
+
+	// items
+	&__item {
+		&--head {
+			display: flex;
+			align-items: center;
+			margin-right: 60px;
+			@media screen and (max-width: $breakpoint) {
+				margin-right: 0;
+				margin-bottom: 15px;
+			}
+		}
+		&--content {
+			font-size: 25px;
+			color: var(--body-color);
+			line-height: 1.2;
+			@media screen and (max-width: $breakpoint) {
+				font-size: 16px;
+				line-height: 1.5;
+			}
+			span {
+				color: var(--product-color);
+			}
+		}
+	}
+	&__icon {
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin-right: 15px;
+		@media screen and (max-width: $breakpoint) {
+			width: 48px;
+			height: 48px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+
+	&__hash {
+		color: var(--hashtag-color);
+		font-size: 32px;
+		font-weight: bold;
+		@media screen and (max-width: $breakpoint) {
+			font-size: 26px;
+		}
+	}
+}
