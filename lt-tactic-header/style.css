@@ -1,0 +1,195 @@
+/* IGNORAR **/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  background: #f1f1f1;
+}
+
+body {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+/* IGNORAR */
+.lt-tactic-header {
+  --font-family: "Roboto" sans-serif;
+  --background-color: #e5e5e5;
+  --background-color-hover: #aed7c5;
+  --color: #000;
+  --color-hover: #000;
+  margin-bottom: 40px;
+}
+
+.lt-tactic-header__banner {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.lt-tactic-header__banner img {
+  display: block;
+  width: 100%;
+}
+
+.lt-tactic-header__nav {
+  position: relative;
+}
+
+.lt-tactic-header__nav input:checked ~ .lt-tactic-header__accordion {
+  background: var(--background-color-hover);
+  color: var(--color-hover);
+}
+
+.lt-tactic-header__nav input:checked ~ .lt-tactic-header__accordion .burger span:nth-child(2) {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.lt-tactic-header__nav input:checked ~ .lt-tactic-header__accordion .burger span:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+
+.lt-tactic-header__nav input:checked ~ .lt-tactic-header__accordion .burger span:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
+}
+
+.lt-tactic-header__nav input:checked ~ .lt-tactic-header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__nav input:checked ~ .lt-tactic-header__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.lt-tactic-header__accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: var(--background-color);
+  padding: 20px;
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__accordion {
+    display: none;
+  }
+}
+
+.lt-tactic-header__accordion .burger {
+  width: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+
+.lt-tactic-header__accordion .burger span {
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color);
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+}
+
+.lt-tactic-header__list {
+  display: none;
+  list-style-type: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__list__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.lt-tactic-header__list__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  background: var(--background-color);
+  text-decoration: none;
+  color: var(--color);
+  font-size: 15px;
+  line-height: 20px;
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+  overflow: hidden;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__list__link {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.lt-tactic-header__list__link--image {
+  text-align: right;
+}
+
+.lt-tactic-header__list__link:hover {
+  background: var(--background-color-hover);
+  color: var(--color-hover);
+}
+
+.lt-tactic-header__list__link img {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .lt-tactic-header__list__link img {
+    max-width: 50%;
+  }
+}

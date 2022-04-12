@@ -1,0 +1,136 @@
+/* IGNORAR **/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	background: #f1f1f1;
+}
+body {
+	max-width: 1366px;
+	margin: 0 auto;
+	padding-bottom: 200px;
+}
+
+/* IGNORAR */
+
+$breakpoint: 768px;
+
+.lt-tactic-header {
+	$t: &;
+	--font-family: "Roboto" sans-serif;
+	--background-color: #e5e5e5;
+	--background-color-hover: #aed7c5;
+	--color: #000;
+	--color-hover: #000;
+	margin-bottom: 40px;
+	&__banner {
+		display: block;
+		margin-bottom: 20px;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	&__nav {
+		position: relative;
+		input:checked {
+			~ #{$t}__accordion {
+				background: var(--background-color-hover);
+				color: var(--color-hover);
+				.burger {
+					span {
+						&:nth-child(2) {
+							transform: scaleX(0);
+						}
+						&:nth-child(1) {
+							transform: translateY(8px) rotate(45deg);
+						}
+						&:nth-child(3) {
+							transform: translateY(-8px) rotate(-45deg);
+						}
+					}
+				}
+			}
+			~ #{$t}__list {
+				display: flex;
+				flex-direction: column;
+				@media screen and (min-width: $breakpoint) {
+					flex-direction: row;
+				}
+			}
+		}
+	}
+	&__accordion {
+		display: flex;
+		justify-content: space-between;
+		background: var(--background-color);
+		padding: 20px;
+		transition: all ease 200ms;
+		@media screen and (min-width: $breakpoint) {
+			display: none;
+		}
+		.burger {
+			width: 24px;
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			span {
+				width: 100%;
+				height: 4px;
+				border-radius: 4px;
+				background: var(--color);
+				transition: all ease 200ms;
+			}
+		}
+	}
+	&__list {
+		display: none;
+		list-style-type: none;
+		width: 100%;
+		@media screen and (min-width: $breakpoint) {
+			display: flex;
+			gap: 15px;
+		}
+		&__item {
+			@media screen and (min-width: $breakpoint) {
+				flex: 1;
+			}
+		}
+		&__link {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: 10px 15px;
+			background: var(--background-color);
+			text-decoration: none;
+			color: var(--color);
+			font-size: 15px;
+			line-height: 20px;
+			transition: all ease 200ms;
+			overflow: hidden;
+			height: 100%;
+			@media screen and (min-width: $breakpoint) {
+				text-align: center;
+				justify-content: center;
+				border-radius: 8px;
+				box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+			}
+			&--image {
+				text-align: right;
+			}
+			&:hover {
+				background: var(--background-color-hover);
+				color: var(--color-hover);
+			}
+			img {
+				max-width: 60px;
+				margin-right: 10px;
+				@media screen and (min-width: $breakpoint) {
+					max-width: 50%;
+				}
+			}
+		}
+	}
+}
