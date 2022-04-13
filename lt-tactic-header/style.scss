@@ -123,6 +123,7 @@ $breakpoint-xs: 481px;
 			&:hover, &.active {
 				background: var(--background-color-hover);
 				color: var(--color-hover);
+				text-decoration: none;
 			}
 			img {
 				max-width: 60px;
