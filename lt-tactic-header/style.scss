@@ -120,7 +120,7 @@ $breakpoint-xs: 481px;
 					text-align: right;
 				}
 			}
-			&:hover {
+			&:hover, &.active {
 				background: var(--background-color-hover);
 				color: var(--color-hover);
 			}
